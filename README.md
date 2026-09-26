@@ -31,4 +31,3 @@ Consulta [docs/LOCAL_SETUP.md](docs/LOCAL_SETUP.md) para el procedimiento comple
 - [Git y GitHub](docs/GITHUB.md)
 - [Despliegue al hosting](docs/HOSTING.md)
 - [Plan incremental](docs/ROADMAP.md)
-
