@@ -39,6 +39,13 @@ Los nutrientes son aproximados y demostrativos. No constituyen diagnóstico ni r
 - `GET /wp-json/chef-en-casa/v1/food-types`
 - `GET /wp-json/chef-en-casa/v1/ingredients`
 - `GET /wp-json/chef-en-casa/v1/ingredients?food_type=vegana`
+- `GET /wp-json/chef-en-casa/v1/dishes`
+- `GET /wp-json/chef-en-casa/v1/dishes/{id}`
 
 Las operaciones de escritura se incorporarán junto con permisos, nonces y administración en una capa posterior.
 
+## Platos y nutrición
+
+`wp_chef_dishes` almacena la definición del plato. `wp_chef_dish_ingredient` registra ingrediente, cantidad y unidad mediante una clave compuesta. `wp_chef_dish_food_type` permite clasificar cada plato en uno o varios tipos de alimentación.
+
+Los nutrientes no se almacenan en el plato. Se calculan desde sus ingredientes con `cantidad / 100 × valor_100g`, tanto para la receta completa como por porción.

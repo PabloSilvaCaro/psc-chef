@@ -20,6 +20,25 @@ final class Chef_REST_Controller {
 				'args' => array( 'food_type' => array( 'sanitize_callback' => 'sanitize_title', 'validate_callback' => static fn( $value ): bool => is_string( $value ) ) ),
 			)
 		);
+		register_rest_route( $this->namespace, '/dishes', array( 'methods' => WP_REST_Server::READABLE, 'callback' => array( $this, 'dishes' ), 'permission_callback' => '__return_true' ) );
+		register_rest_route(
+			$this->namespace,
+			'/dishes/(?P<id>[\d]+)',
+			array(
+				'methods' => WP_REST_Server::READABLE, 'callback' => array( $this, 'dish' ), 'permission_callback' => '__return_true',
+				'args' => array( 'id' => array( 'sanitize_callback' => 'absint', 'validate_callback' => static fn( $value ): bool => absint( $value ) > 0 ) ),
+			)
+		);
+	}
+
+	public function dishes(): WP_REST_Response {
+		$data = ( new Chef_Dish_Service() )->all();
+		return rest_ensure_response( array( 'data' => $data, 'meta' => array( 'count' => count( $data ) ) ) );
+	}
+
+	public function dish( WP_REST_Request $request ): WP_REST_Response|WP_Error {
+		$data = ( new Chef_Dish_Service() )->find( absint( $request['id'] ) );
+		return $data ? rest_ensure_response( array( 'data' => $data ) ) : new WP_Error( 'chef_dish_not_found', __( 'Plato no encontrado.', 'chef-en-casa' ), array( 'status' => 404 ) );
 	}
 
 	public function food_types(): WP_REST_Response {
@@ -52,4 +71,3 @@ final class Chef_REST_Controller {
 		);
 	}
 }
-

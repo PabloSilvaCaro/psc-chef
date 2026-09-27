@@ -12,11 +12,11 @@ Logo profesional, paleta, tipografías, tokens visuales y variantes de marca.
 
 Conversión de la interfaz existente a un tema WordPress responsive, con activos locales y componentes reutilizables.
 
-## Capa 4 — Modelo funcional (en revisión)
+## Capa 4 — Modelo funcional ✅
 
 Tipos de alimentación, ingredientes, relaciones y datos iniciales mediante el plugin.
 
-## Capa 5 — Platos y nutrición
+## Capa 5 — Platos y nutrición (en revisión)
 
 Composición de platos, cantidades y cálculo nutricional.
 
