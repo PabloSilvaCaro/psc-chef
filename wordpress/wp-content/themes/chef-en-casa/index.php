@@ -1,25 +1,18 @@
 <?php
 /**
- * Plantilla provisional de la Capa 1.
+ * Default template.
  *
  * @package ChefEnCasa
  */
 
-defined( 'ABSPATH' ) || exit;
-?><!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-	<?php wp_body_open(); ?>
-	<main>
-		<h1><?php esc_html_e( 'Chef en Casa', 'chef-en-casa' ); ?></h1>
-		<p><?php esc_html_e( 'La base WordPress está lista. La interfaz se incorporará en una capa posterior.', 'chef-en-casa' ); ?></p>
-	</main>
-	<?php wp_footer(); ?>
-</body>
-</html>
+get_header();
+?>
+<main id="main-content" class="section"><div class="container content-area">
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+		<article <?php post_class(); ?>><h1><?php the_title(); ?></h1><?php the_content(); ?></article>
+	<?php endwhile; else : ?>
+		<p><?php esc_html_e( 'No hay contenido disponible.', 'chef-en-casa' ); ?></p>
+	<?php endif; ?>
+</div></main>
+<?php get_footer(); ?>
 

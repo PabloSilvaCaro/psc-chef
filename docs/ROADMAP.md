@@ -4,11 +4,11 @@
 
 Docker Compose, estructura WordPress, Git/GitHub, documentación, AGENTS.md y skill del proyecto.
 
-## Capa 2 — Identidad visual (en revisión)
+## Capa 2 — Identidad visual provisional ✅
 
 Logo profesional, paleta, tipografías, tokens visuales y variantes de marca.
 
-## Capa 3 — Réplica de la portada actual
+## Capa 3 — Réplica de la portada actual (en revisión)
 
 Conversión de la interfaz existente a un tema WordPress responsive, con activos locales y componentes reutilizables.
 
