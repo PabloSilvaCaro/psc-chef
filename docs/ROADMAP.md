@@ -8,11 +8,11 @@ Docker Compose, estructura WordPress, Git/GitHub, documentación, AGENTS.md y sk
 
 Logo profesional, paleta, tipografías, tokens visuales y variantes de marca.
 
-## Capa 3 — Réplica de la portada actual (en revisión)
+## Capa 3 — Réplica de la portada actual ✅
 
 Conversión de la interfaz existente a un tema WordPress responsive, con activos locales y componentes reutilizables.
 
-## Capa 4 — Modelo funcional
+## Capa 4 — Modelo funcional (en revisión)
 
 Tipos de alimentación, ingredientes, relaciones y datos iniciales mediante el plugin.
 
