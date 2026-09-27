@@ -1,0 +1,8 @@
+:root {
+  --chef-color-aubergine-950:#24143f;--chef-color-aubergine-800:#35205b;--chef-color-aubergine-700:#50367a;
+  --chef-color-coral-500:#ff5548;--chef-color-coral-400:#ff6a5f;--chef-color-mango-500:#ffc53d;--chef-color-turquoise-500:#00b89c;--chef-color-turquoise-400:#16d4b5;
+  --chef-color-cream-100:#fff8ef;--chef-color-paper:#fffdf9;--chef-color-ink:#241b32;--chef-color-muted:#655b74;--chef-color-line:#e9e2ef;
+  --chef-color-primary:var(--chef-color-aubergine-800);--chef-color-primary-hover:var(--chef-color-aubergine-700);--chef-color-accent:var(--chef-color-coral-500);--chef-color-highlight:var(--chef-color-mango-500);--chef-color-fresh:var(--chef-color-turquoise-500);--chef-color-surface:var(--chef-color-paper);--chef-color-surface-soft:var(--chef-color-cream-100);--chef-color-text:var(--chef-color-ink);--chef-color-text-muted:var(--chef-color-muted);
+  --chef-font-display:"Bricolage Grotesque","Arial Black",sans-serif;--chef-font-body:"Plus Jakarta Sans","Segoe UI",Arial,sans-serif;--chef-weight-regular:400;--chef-weight-medium:500;--chef-weight-semibold:600;--chef-weight-bold:700;--chef-weight-extrabold:800;
+  --chef-radius-sm:.75rem;--chef-radius-md:1.25rem;--chef-radius-lg:2rem;--chef-radius-pill:999px;--chef-shadow-soft:0 22px 60px rgb(53 32 91 / 13%);--chef-shadow-card:0 12px 34px rgb(53 32 91 / 10%);--chef-transition:180ms ease;--chef-content-width:1200px;
+}

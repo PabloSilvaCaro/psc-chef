@@ -1,10 +1,10 @@
 # Plan incremental
 
-## Capa 1 — Base reproducible
+## Capa 1 — Base reproducible ✅
 
 Docker Compose, estructura WordPress, Git/GitHub, documentación, AGENTS.md y skill del proyecto.
 
-## Capa 2 — Identidad visual
+## Capa 2 — Identidad visual (en revisión)
 
 Logo profesional, paleta, tipografías, tokens visuales y variantes de marca.
 
@@ -31,4 +31,3 @@ Seguridad, rendimiento, copias de seguridad, configuración y ensayo de migraci�
 ## Capa 8 — Hosting
 
 Despliegue autorizado, comprobaciones posteriores y procedimiento de reversión.
-

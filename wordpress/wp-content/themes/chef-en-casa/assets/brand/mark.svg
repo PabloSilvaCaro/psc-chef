@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Chef en Casa</title><desc id="desc">Una letra C inspirada en un plato, acompañada de una hoja.</desc>
+  <path d="M99 27A48 48 0 1 0 99 101" fill="none" stroke="#FF5548" stroke-width="16" stroke-linecap="round"/>
+  <path d="M64 65c8-18 21-27 39-26-4 18-17 28-39 26Z" fill="#00B89C"/>
+  <path d="M65 65c11-3 21-10 29-19" fill="none" stroke="#35205B" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="107" cy="82" r="10" fill="#FFC53D"/>
+  <circle cx="107" cy="82" r="4" fill="#35205B"/>
+</svg>
