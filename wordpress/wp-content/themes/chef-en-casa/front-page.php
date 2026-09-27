@@ -5,9 +5,18 @@
  * @package ChefEnCasa
  */
 
-get_header();
-
 $theme_uri = get_template_directory_uri();
+$featured_dishes = array();
+$featured_slugs  = array( 'ensalada-mediterranea-quinoa', 'pollo-arroz-integral-brocoli', 'tofu-dorado-vegetales' );
+if ( class_exists( 'Chef_Dish_Service' ) ) {
+	$all_dishes = ( new Chef_Dish_Service() )->all();
+	foreach ( $featured_slugs as $featured_slug ) {
+		foreach ( $all_dishes as $dish ) {
+			if ( $featured_slug === $dish['slug'] ) { $featured_dishes[] = $dish; break; }
+		}
+	}
+}
+get_header();
 ?>
 <main id="main-content">
 	<section class="hero" id="experiencia">
@@ -38,6 +47,24 @@ $theme_uri = get_template_directory_uri();
 		</div>
 	</div></section>
 
+	<?php if ( $featured_dishes ) : ?>
+	<section class="section featured-dishes" id="platos"><div class="container">
+		<div class="dishes-heading"><div><p class="kicker"><?php esc_html_e( 'Una muestra del catálogo', 'chef-en-casa' ); ?></p><h2><?php esc_html_e( 'Platos que hablan por sí solos.', 'chef-en-casa' ); ?></h2></div><p><?php esc_html_e( 'Preparaciones reales con información clara, calculada desde cada ingrediente y su cantidad.', 'chef-en-casa' ); ?></p></div>
+		<div class="dish-grid">
+		<?php
+		$image_map = array( 'ensalada-mediterranea-quinoa' => 'ensalada-mediterranea-quinoa.png', 'pollo-arroz-integral-brocoli' => 'pollo-arroz-brocoli.png', 'tofu-dorado-vegetales' => 'tofu-dorado-vegetales.png' );
+		foreach ( $featured_dishes as $dish ) : $nutrition = $dish['nutrition']['per_serving']; ?>
+			<article class="dish-card">
+				<div class="dish-photo"><img src="<?php echo esc_url( $theme_uri . '/assets/images/dishes/' . $image_map[ $dish['slug'] ] ); ?>" alt="<?php echo esc_attr( $dish['name'] ); ?>" loading="lazy"><span><?php echo esc_html( $dish['preparation_type'] ); ?></span></div>
+				<div class="dish-content"><div class="dish-types"><?php foreach ( $dish['food_types'] as $food_type ) : ?><span><?php echo esc_html( $food_type['name'] ); ?></span><?php endforeach; ?></div><h3><?php echo esc_html( $dish['name'] ); ?></h3><p><?php echo esc_html( $dish['description'] ); ?></p>
+					<div class="nutrition-row"><div><b><?php echo esc_html( number_format_i18n( $nutrition['calories'], 0 ) ); ?></b><span>kcal</span></div><div><b><?php echo esc_html( number_format_i18n( $nutrition['proteins'], 1 ) ); ?>g</b><span><?php esc_html_e( 'proteína', 'chef-en-casa' ); ?></span></div><div><b><?php echo esc_html( number_format_i18n( $nutrition['carbohydrates'], 1 ) ); ?>g</b><span><?php esc_html_e( 'carbos', 'chef-en-casa' ); ?></span></div></div><p class="nutrition-note"><?php esc_html_e( 'Valores aproximados por porción', 'chef-en-casa' ); ?></p>
+				</div>
+			</article>
+		<?php endforeach; ?>
+		</div>
+	</div></section>
+	<?php endif; ?>
+
 	<section class="section benefits" id="beneficios"><div class="container benefits-grid">
 		<div class="benefits-copy"><p class="kicker kicker-light"><?php esc_html_e( 'Cocina personal, de verdad', 'chef-en-casa' ); ?></p><h2><?php esc_html_e( 'La buena cocina empieza escuchando.', 'chef-en-casa' ); ?></h2><p><?php esc_html_e( 'Cada propuesta nace de entender qué disfrutas, qué necesitas y cómo vives. Sin fórmulas rígidas ni soluciones genéricas.', 'chef-en-casa' ); ?></p><span class="signature"><?php esc_html_e( 'Hecho en casa. Pensado para ti.', 'chef-en-casa' ); ?></span></div>
 		<div class="benefit-list">
@@ -55,4 +82,3 @@ $theme_uri = get_template_directory_uri();
 	<section class="section cta" id="contacto"><div class="container"><div class="cta-panel"><div><p class="kicker"><?php esc_html_e( 'Muy pronto', 'chef-en-casa' ); ?></p><h2><?php esc_html_e( 'Tu próxima comida puede sentirse diferente.', 'chef-en-casa' ); ?></h2><p><?php esc_html_e( 'Estamos preparando los primeros menús y experiencias de Chef en Casa.', 'chef-en-casa' ); ?></p></div><a class="button button-light" href="mailto:hola@example.com"><?php esc_html_e( 'Quiero conocer más', 'chef-en-casa' ); ?><span aria-hidden="true">↗</span></a></div></div></section>
 </main>
 <?php get_footer(); ?>
-

@@ -25,10 +25,9 @@
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav-list', 'fallback_cb' => false ) ); ?>
 			<?php else : ?>
-				<ul class="nav-list"><li><a href="#experiencia"><?php esc_html_e( 'La experiencia', 'chef-en-casa' ); ?></a></li><li><a href="#como-funciona"><?php esc_html_e( 'Cómo funciona', 'chef-en-casa' ); ?></a></li><li><a href="#beneficios"><?php esc_html_e( 'Beneficios', 'chef-en-casa' ); ?></a></li></ul>
+				<ul class="nav-list"><li><a href="#experiencia"><?php esc_html_e( 'La experiencia', 'chef-en-casa' ); ?></a></li><li><a href="#como-funciona"><?php esc_html_e( 'Cómo funciona', 'chef-en-casa' ); ?></a></li><li><a href="#platos"><?php esc_html_e( 'Platos', 'chef-en-casa' ); ?></a></li><li><a href="#beneficios"><?php esc_html_e( 'Beneficios', 'chef-en-casa' ); ?></a></li></ul>
 			<?php endif; ?>
 			<a class="button button-small" href="#contacto"><?php esc_html_e( 'Quiero saber más', 'chef-en-casa' ); ?></a>
 		</nav>
 	</div>
 </header>
-
