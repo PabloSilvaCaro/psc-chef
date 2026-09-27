@@ -49,3 +49,10 @@ Las operaciones de escritura se incorporarán junto con permisos, nonces y admin
 `wp_chef_dishes` almacena la definición del plato. `wp_chef_dish_ingredient` registra ingrediente, cantidad y unidad mediante una clave compuesta. `wp_chef_dish_food_type` permite clasificar cada plato en uno o varios tipos de alimentación.
 
 Los nutrientes no se almacenan en el plato. Se calculan desde sus ingredientes con `cantidad / 100 × valor_100g`, tanto para la receta completa como por porción.
+
+## Menús
+
+`wp_chef_menus` relaciona cada menú con su tipo de alimentación principal. `wp_chef_menu_dish` asocia platos, tipo de curso y orden de presentación. La carga demo crea seis menús y es idempotente.
+
+- `GET /wp-json/chef-en-casa/v1/menus`
+- `GET /wp-json/chef-en-casa/v1/menus/{id}`

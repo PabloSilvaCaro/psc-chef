@@ -12,6 +12,8 @@ final class Chef_Activator {
 		self::create_tables();
 		self::seed_data();
 		Chef_Dish_Installer::install();
+		Chef_Menu_Installer::install();
+		Chef_Page_Installer::install();
 		update_option( 'chef_en_casa_db_version', CHEF_EN_CASA_DB_VERSION, false );
 	}
 

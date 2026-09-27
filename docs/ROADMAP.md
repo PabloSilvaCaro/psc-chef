@@ -16,11 +16,11 @@ Conversión de la interfaz existente a un tema WordPress responsive, con activos
 
 Tipos de alimentación, ingredientes, relaciones y datos iniciales mediante el plugin.
 
-## Capa 5 — Platos y nutrición (en revisión)
+## Capa 5 — Platos y nutrición ✅
 
 Composición de platos, cantidades y cálculo nutricional.
 
-## Capa 6 — Menús y administración
+## Capa 6 — Menús y administración (en desarrollo)
 
 Asociación de platos, interfaces administrativas y endpoints REST.
 

@@ -29,6 +29,18 @@ final class Chef_REST_Controller {
 				'args' => array( 'id' => array( 'sanitize_callback' => 'absint', 'validate_callback' => static fn( $value ): bool => absint( $value ) > 0 ) ),
 			)
 		);
+		register_rest_route( $this->namespace, '/menus', array( 'methods' => WP_REST_Server::READABLE, 'callback' => array( $this, 'menus' ), 'permission_callback' => '__return_true' ) );
+		register_rest_route( $this->namespace, '/menus/(?P<id>[\d]+)', array( 'methods' => WP_REST_Server::READABLE, 'callback' => array( $this, 'menu' ), 'permission_callback' => '__return_true', 'args' => array( 'id' => array( 'sanitize_callback' => 'absint' ) ) ) );
+	}
+
+	public function menus(): WP_REST_Response {
+		$data = ( new Chef_Menu_Service() )->all();
+		return rest_ensure_response( array( 'data' => $data, 'meta' => array( 'count' => count( $data ) ) ) );
+	}
+
+	public function menu( WP_REST_Request $request ): WP_REST_Response|WP_Error {
+		$data = ( new Chef_Menu_Service() )->find( absint( $request['id'] ) );
+		return $data ? rest_ensure_response( array( 'data' => $data ) ) : new WP_Error( 'chef_menu_not_found', __( 'Menú no encontrado.', 'chef-en-casa' ), array( 'status' => 404 ) );
 	}
 
 	public function dishes(): WP_REST_Response {
